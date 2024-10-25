@@ -1,0 +1,6 @@
+include solar_system/*
+
+include solar_system/TESTs/*
+
+include solar_system/pygame/*
+exclude solar_system/pygame/*.docx

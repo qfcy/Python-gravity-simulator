@@ -1,0 +1,33 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+solar_system/__init__.py
+solar_system/empty.pkl
+solar_system/solar_system.py
+solar_system/solar_system_v1.0.py
+solar_system/solar_system_v1.1.1.py
+solar_system/solar_system_v1.2.04.py
+solar_system/spacecraft.pkl
+solar_system.egg-info/PKG-INFO
+solar_system.egg-info/SOURCES.txt
+solar_system.egg-info/dependency_links.txt
+solar_system.egg-info/top_level.txt
+solar_system/TESTs/BlackHole.jpg
+solar_system/TESTs/solar_system_accelerate.py
+solar_system/TESTs/solar_system_accelerate_util.c
+solar_system/TESTs/solar_system_accelerate_util.cp37-win32.pyd
+solar_system/TESTs/solar_system_binary_star.py
+solar_system/TESTs/solar_system_blackhole1.py
+solar_system/TESTs/solar_system_blackhole2.py
+solar_system/TESTs/solar_system_blackhole3.py
+solar_system/TESTs/solar_system_collision1.py
+solar_system/TESTs/solar_system_collision2.py
+solar_system/TESTs/solar_system_debug.py
+solar_system/TESTs/solar_system_hill_sphere.py
+solar_system/TESTs/solar_system_molecule.py
+solar_system/TESTs/solar_system_particles.py
+solar_system/pygame/引力模拟 - k1.py
+solar_system/pygame/引力模拟 - k2.py
+solar_system/pygame/引力模拟 - v2.py
+solar_system/pygame/引力模拟.py

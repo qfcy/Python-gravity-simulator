@@ -24,7 +24,7 @@ You're able to create a universe belonging to yourself in this program.
 Additionally, this project can be further expanded to research other physical problems.  
 **The English introduction is placed below the Chinese version.**  
 
-项目源代码 (Project source code)：https://github.com/qfcy/python-gravity-simulation  
+项目源代码 (Project source code)：https://github.com/qfcy/python-gravity-simulator  
 ## 一.各个文件的介绍
 
 #### 1.主程序

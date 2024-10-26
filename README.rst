@@ -307,6 +307,6 @@ CSDN home page:`qfcy\_ <https://blog.csdn.net/qfcy_>`__
 Bilibili home page:`qfcy\_ <https://space.bilibili.com/454233262>`__
 
 .. |image1| image:: https://img-blog.csdnimg.cn/69ef2a3fef3b4b3198b292d427e51f42.gif#pic_center
-.. |image2| image:: https://img-blog.csdnimg.cn/3b8256294fae45cca841577167394dca.gif#pic_center
+.. |image2| image:: https://i-blog.csdnimg.cn/direct/9fbf963a5b1a4cbaa18a5d3dcd5110a5.gif#pic_center
 .. |image3| image:: https://img-blog.csdnimg.cn/478371f05bdf4940b84a6d31625c82b6.png#pic_center
 .. |image4| image:: https://img-blog.csdnimg.cn/2816259f85374130ac35060d08df3af2.png#pic_center

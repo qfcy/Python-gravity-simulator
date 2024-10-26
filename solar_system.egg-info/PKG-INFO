@@ -5,7 +5,7 @@ Summary: Python模拟万有引力、太阳系行星运动的库，模拟天体�
 Home-page: https://github.com/qfcy/python-gravity-simulation
 Author: 七分诚意 qq:3076711200
 Author-email: 3076711200@qq.com
-Keywords: solar,system,solarsys,turtle,graphics,太阳系,引力,模拟,物理,天文,astronomy,gravity,physics,mercury,venus,earth,mars,jupiter,saturn,uranus,neptune,pluto
+Keywords: solar,system,solarsys,turtle,graphics,astronomy,gravity,physics,太阳系,引力,模拟,物理,天文,mercury,venus,earth,mars,jupiter,saturn,uranus,neptune,pluto
 Classifier: Programming Language :: Python
 Classifier: Topic :: Scientific/Engineering :: Astronomy
 Classifier: Topic :: Multimedia :: Graphics
@@ -82,7 +82,7 @@ TESTs/solar_system_particles.py：使用更快的“粒子”计算小行星，�
 
 TESTs/solar_system_blackhole1.py：行星掉入黑洞的模拟1
 
-TESTs/solar_system_blackhole2.py：行星掉入黑洞的模拟2（包含了turtle模块绘制旋转图片的技巧，见
+TESTs/solar_system_blackhole2.py：行星掉入黑洞的模拟2，包含对turtle模块函数的修改和补丁，如turtle模块绘制旋转图片（见
 `这篇文章 <https://blog.csdn.net/qfcy_/article/details/120584657>`__\ ）
 
 TESTs/solar_system_blackhole3.py：第3个行星掉入黑洞的模拟
@@ -322,6 +322,6 @@ CSDN home page:`qfcy\_ <https://blog.csdn.net/qfcy_>`__
 Bilibili home page:`qfcy\_ <https://space.bilibili.com/454233262>`__
 
 .. |image1| image:: https://img-blog.csdnimg.cn/69ef2a3fef3b4b3198b292d427e51f42.gif#pic_center
-.. |image2| image:: https://img-blog.csdnimg.cn/3b8256294fae45cca841577167394dca.gif#pic_center
+.. |image2| image:: https://i-blog.csdnimg.cn/direct/9fbf963a5b1a4cbaa18a5d3dcd5110a5.gif#pic_center
 .. |image3| image:: https://img-blog.csdnimg.cn/478371f05bdf4940b84a6d31625c82b6.png#pic_center
 .. |image4| image:: https://img-blog.csdnimg.cn/2816259f85374130ac35060d08df3af2.png#pic_center

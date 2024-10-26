@@ -67,7 +67,7 @@ TESTs/solar_system_particles.py：使用更快的“粒子”计算小行星，�
 
 TESTs/solar_system_blackhole1.py：行星掉入黑洞的模拟1
 
-TESTs/solar_system_blackhole2.py：行星掉入黑洞的模拟2（包含了turtle模块绘制旋转图片的技巧，见
+TESTs/solar_system_blackhole2.py：行星掉入黑洞的模拟2，包含对turtle模块函数的修改和补丁，如turtle模块绘制旋转图片（见
 `这篇文章 <https://blog.csdn.net/qfcy_/article/details/120584657>`__\ ）
 
 TESTs/solar_system_blackhole3.py：第3个行星掉入黑洞的模拟

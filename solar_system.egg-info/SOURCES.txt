@@ -13,6 +13,7 @@ solar_system.egg-info/PKG-INFO
 solar_system.egg-info/SOURCES.txt
 solar_system.egg-info/dependency_links.txt
 solar_system.egg-info/top_level.txt
+solar_system/TESTs/solar_system_accelerate_util.c
 solar_system/TESTs/BlackHole.jpg
 solar_system/TESTs/solar_system_accelerate.py
 solar_system/TESTs/solar_system_accelerate_util.c

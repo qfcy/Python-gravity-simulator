@@ -27,6 +27,7 @@ except ImportError:
 __version__="1.3.3"
 
 ## -- 重写turtle模块中的函数，在turtle模块源码的基础上加以修改 --
+# 由于turtle模块极少更新，修改的函数几乎不会在新版Python中不兼容
 images={} # 用于创建图像的引用
 def _image(self,filename):
     img=Image.open(filename)
@@ -90,44 +91,117 @@ def register_shape(self, name, shape=None):
     self._shapes[name] = shape
 
 def _drawturtle(self):
-        """Manages the correct rendering of the turtle with respect to
-        its shape, resizemode, stretch and tilt etc."""
-        screen = self.screen
-        shape = screen._shapes[self.turtle.shapeIndex]
-        ttype = shape._type
-        titem = self.turtle._item
-        if self._shown and screen._updatecounter == 0 and screen._tracing > 0:
-            self._hidden_from_screen = False
-            tshape = shape._data
-            if ttype == "polygon":
-                if self._resizemode == "noresize": w = 1
-                elif self._resizemode == "auto": w = self._pensize
-                else: w =self._outlinewidth
-                shape = self._polytrafo(self._getshapepoly(tshape))
-                fc, oc = self._fillcolor, self._pencolor
-                screen._drawpoly(titem, shape, fill=fc, outline=oc,
-                                                      width=w, top=True)
-            elif ttype == "image":
-                screen._drawimage(titem, self._position, tshape,
-                                  self.heading(),self._stretchfactor[0])
-            elif ttype == "compound":
-                for item, (poly, fc, oc) in zip(titem, tshape):
-                    poly = self._polytrafo(self._getshapepoly(poly, True))
-                    screen._drawpoly(item, poly, fill=self._cc(fc),
-                                     outline=self._cc(oc), width=self._outlinewidth, top=True)
-        else:
-            if self._hidden_from_screen:
-                return
-            if ttype == "polygon":
-                screen._drawpoly(titem, ((0, 0), (0, 0), (0, 0)), "", "")
-            elif ttype == "image":
-                screen._drawimage(titem, self._position,
-                                          screen._shapes["blank"]._data)
-                if titem in images:del images[titem] # 如果已隐藏，则释放图像引用
-            elif ttype == "compound":
-                for item in titem:
-                    screen._drawpoly(item, ((0, 0), (0, 0), (0, 0)), "", "")
-            self._hidden_from_screen = True
+    """Manages the correct rendering of the turtle with respect to
+    its shape, resizemode, stretch and tilt etc."""
+    screen = self.screen
+    shape = screen._shapes[self.turtle.shapeIndex]
+    ttype = shape._type
+    titem = self.turtle._item
+    if self._shown and screen._updatecounter == 0 and screen._tracing > 0:
+        self._hidden_from_screen = False
+        tshape = shape._data
+        if ttype == "polygon":
+            if self._resizemode == "noresize": w = 1
+            elif self._resizemode == "auto": w = self._pensize
+            else: w =self._outlinewidth
+            shape = self._polytrafo(self._getshapepoly(tshape))
+            fc, oc = self._fillcolor, self._pencolor
+            screen._drawpoly(titem, shape, fill=fc, outline=oc,
+                                                  width=w, top=True)
+        elif ttype == "image":
+            screen._drawimage(titem, self._position, tshape,
+                              self.heading(),self._stretchfactor[0])
+        elif ttype == "compound":
+            for item, (poly, fc, oc) in zip(titem, tshape):
+                poly = self._polytrafo(self._getshapepoly(poly, True))
+                screen._drawpoly(item, poly, fill=self._cc(fc),
+                                 outline=self._cc(oc), width=self._outlinewidth, top=True)
+    else:
+        if self._hidden_from_screen:
+            return
+        if ttype == "polygon":
+            screen._drawpoly(titem, ((0, 0), (0, 0), (0, 0)), "", "")
+        elif ttype == "image":
+            screen._drawimage(titem, self._position,
+                                      screen._shapes["blank"]._data)
+            if titem in images:del images[titem] # 如果已隐藏，则释放图像引用
+        elif ttype == "compound":
+            for item in titem:
+                screen._drawpoly(item, ((0, 0), (0, 0), (0, 0)), "", "")
+        self._hidden_from_screen = True
+
+def _drawline(self, lineitem, coordlist=None,
+              fill=None, width=None, top=False):
+    """Configure lineitem according to provided arguments:
+    coordlist is sequence of coordinates
+    fill is drawing color
+    width is width of drawn line.
+    top is a boolean value, which specifies if polyitem
+    will be put on top of the canvas' displaylist so it
+    will not be covered by other items.
+    """
+    if coordlist is not None:
+        cl=(value for coord in coordlist for value in 
+            (coord[0] * self.xscale, -coord[1] * self.yscale)) # 迭代器
+        self.cv.coords(lineitem, *cl)
+    if fill is not None:
+        self.cv.itemconfigure(lineitem, fill=fill)
+    if width is not None:
+        self.cv.itemconfigure(lineitem, width=width)
+    if top:
+        self.cv.tag_raise(lineitem)
+
+def _goto(self, end): # 优化绘制较长天体轨道的性能
+    """Move the pen to the point end, thereby drawing a line
+    if pen is down. All other methods for turtle movement depend
+    on this one.
+    """
+    ## Version with undo-stuff
+    go_modes = ( self._drawing,
+                 self._pencolor,
+                 self._pensize,
+                 isinstance(self._fillpath, list))
+    screen = self.screen
+    undo_entry = ("go", self._position, end, go_modes,
+                  (self.currentLineItem,
+                  self.currentLine[:],
+                  screen._pointlist(self.currentLineItem),
+                  self.items[:])
+                  )
+    if self.undobuffer:
+        self.undobuffer.push(undo_entry)
+    start = self._position
+    if self._speed and screen._tracing == 1:
+        diff = (end-start)
+        diffsq = (diff[0]*screen.xscale)**2 + (diff[1]*screen.yscale)**2
+        nhops = 1+int((diffsq**0.5)/(3*(1.1**self._speed)*self._speed))
+        delta = diff * (1.0/nhops)
+        for n in range(1, nhops):
+            if n == 1:
+                top = True
+            else:
+                top = False
+            self._position = start + delta * n
+            if self._drawing:
+                screen._drawline(self.drawingLineItem,
+                                 (start, self._position),
+                                 self._pencolor, self._pensize, top)
+            self._update()
+        if self._drawing:
+            screen._drawline(self.drawingLineItem, ((0, 0), (0, 0)),
+                                           fill="", width=self._pensize)
+    # Turtle now at end,
+    if self._drawing: # now update currentLine
+        self.currentLine.append(end)
+    if isinstance(self._fillpath, list):
+        self._fillpath.append(end)
+    ######    vererbung!!!!!!!!!!!!!!!!!!!!!!
+    self._position = end
+    if self._creatingPoly:
+        self._poly.append(end)
+    if len(self.currentLine) > 320: # tkinter.Canvas上一条线的最大长度，turtle中原本为42
+        self._newLine()
+    self._update() #count=True)
 
 if Image: # 若导入PIL模块成功
     # 用重写的函数替换turtle模块中原来的函数
@@ -136,6 +210,10 @@ if Image: # 若导入PIL模块成功
     turtle.TurtleScreenBase._drawimage=_drawimage
     turtle.TurtleScreen.register_shape=register_shape
     turtle.RawTurtle._drawturtle=_drawturtle
+
+# 不依赖PIL
+turtle.TurtleScreenBase._drawline=_drawline
+turtle.RawTurtle._goto=_goto
 
 # ---------------------重写结束-------------------------
 

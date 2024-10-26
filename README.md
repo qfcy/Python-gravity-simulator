@@ -40,7 +40,7 @@ empty.pkl和spacecraft.pkl：solar_system.py使用pickle库存储天体数据，
 TESTs/solar_system_accelerate.py：使用C语言扩展提升计算的性能（经作者测试，与solar_system.py相比，速度约提升22~45倍），并增加了二阶龙格库塔法  
 TESTs/solar_system_particles.py：使用更快的“粒子”计算小行星，用于提升计算性能（备用）  
 TESTs/solar_system_blackhole1.py：行星掉入黑洞的模拟1  
-TESTs/solar_system_blackhole2.py：行星掉入黑洞的模拟2（包含了turtle模块绘制旋转图片的技巧，见 [这篇文章](https://blog.csdn.net/qfcy_/article/details/120584657)）  
+TESTs/solar_system_blackhole2.py：行星掉入黑洞的模拟2，包含对turtle模块函数的修改和补丁，如turtle模块绘制旋转图片（见 [这篇文章](https://blog.csdn.net/qfcy_/article/details/120584657)）  
 TESTs/solar_system_blackhole3.py：第3个行星掉入黑洞的模拟  
 TESTs/solar_system_hill_sphere.py：[希尔球](https://baike.baidu.com/item/%E5%B8%8C%E5%B0%94%E7%90%83)、[拉格朗日点](https://baike.baidu.com/item/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E7%82%B9/731078) 现象模拟。希尔球指卫星到行星的距离不能超过最大值，也就是前面的第二张动图  
 TESTs/solar_system_binary_star.py：双星系统模拟  

@@ -5,7 +5,7 @@ Slow down the earth continuously. The earth mysteriously falls into the sun, but
 
 2.不断增加月球到地球的距离，月球受太阳潮汐力影响，脱离地球？  
 Increase the distance from the moon to the earth continuously. The moon will be separated from the earth due to the influence of solar tidal force?  
-![](https://img-blog.csdnimg.cn/3b8256294fae45cca841577167394dca.gif#pic_center)
+![](https://i-blog.csdnimg.cn/direct/9fbf963a5b1a4cbaa18a5d3dcd5110a5.gif#pic_center)
 
 这是一个Python计算机模拟万有引力、太阳系行星运动的软件，  
 应用了万有引力等相关的物理公式计算，可以模拟出天体的椭圆轨道，  

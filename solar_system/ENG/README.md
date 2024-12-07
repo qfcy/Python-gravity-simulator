@@ -1,5 +1,5 @@
 This is the **English** localized version of the program.
-这是程序的英文版，**中文版**请看“开普勒定律”文件夹。
+这是程序的英文版，**中文版**请看“教具版”文件夹。
 
 # Documentation
 

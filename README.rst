@@ -43,6 +43,8 @@ You’re able to create a universe belonging to yourself in this program. Additi
 一.各个文件的介绍
 =================
 
+源代码位于solar_system目录中。
+
 1.主程序
 --------
 
@@ -174,6 +176,8 @@ bilibili主页：\ `qfcy\_ <https://space.bilibili.com/454233262>`__
 
 1.The introduction to each file
 ===============================
+
+The source code is located in the solar_system directory.
 
 (1) Main program
 ----------------

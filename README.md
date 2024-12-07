@@ -27,6 +27,8 @@ Additionally, this project can be further expanded to research other physical pr
 项目源代码 (Project source code)：https://github.com/qfcy/python-gravity-simulator  
 ## 一.各个文件的介绍
 
+源代码位于solar_system目录中。  
+
 #### 1.主程序
 solar_system.py：主程序的最新版本，也是一个公共的模块  
 solar_system_v1.0.py：主程序的1.0版本（存档备用）  
@@ -99,6 +101,8 @@ bilibili主页：[qfcy_](https://space.bilibili.com/454233262)
 英文版介绍(使用了翻译软件+自己修改、润色)：  
 
 ## 1.The introduction to each file
+
+The source code is located in the solar_system directory.  
 
 #### (1) Main program
 

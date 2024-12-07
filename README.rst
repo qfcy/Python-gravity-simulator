@@ -151,7 +151,7 @@ y\ :sub:`B`\ \| /md。
 
 Q: 为什么本项目主要使用了turtle库，而不用其他更高级的图形库？
 
-A: 首先，作者本想用tkinter库编写该程序，但考虑到直接调用Canvas控件绘制行星形状的代码量较大，而且由于基于tkinter的turtle库封装了tkinter，能够间接调用Canvas控件进行绘图，就使用turtle库绘制图形。
+A: 首先，作者本想用tkinter库编写该程序，但考虑到直接调用Canvas控件绘制行星形状的代码量较大，而且基于tkinter的turtle库封装了tkinter，能够间接调用Canvas控件进行绘图，就使用turtle库绘制图形，避免重复造轮子。
 
 目前，程序中的界面主要使用tkinter库设计，而基于tkinter的turtle库仅用于渲染。另外，作者基于自己的tkinter知识，重写和扩展了原版turtle模块，如`TESTS\solar_system_blackhole2.py`基于PIL库为turtle添加了图像旋转功能。
 

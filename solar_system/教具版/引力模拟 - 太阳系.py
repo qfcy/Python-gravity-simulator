@@ -399,6 +399,7 @@ scr=None
 def main():
     global scr,gs,win
     scr=Screen()
+    scr.title("Python 天体引力模拟")
     scr.screensize(6000,6000)
     try:
         scr._canvas.master.state("zoomed")

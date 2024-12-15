@@ -21,7 +21,7 @@ Increase the distance from the moon to the earth continuously. The moon will be 
 
 支持跟踪行星、切换行星，包含简单的发射“飞船”功能。
 
-图形部分使用turtle(tkinter)或Pygame库。
+图形部分使用tkinter(turtle)或Pygame库。
 
 你能在其中创造一个属于自己的宇宙。
 
@@ -151,7 +151,7 @@ y\ :sub:`B`\ \| /md。
 四.常见问题
 ===========
 
-Q: 为什么本项目主要使用了turtle库，而不用其他更高级的图形库？
+Q: 为什么本项目使用了turtle库渲染tkinter.Canvas的界面，而不直接使用tkinter，或其他图形库？
 
 A: 首先，作者本想用tkinter库编写该程序，但考虑到直接调用Canvas控件绘制行星形状的代码量较大，而且基于tkinter的turtle库封装了tkinter，能够间接调用Canvas控件进行绘图，就使用turtle库绘制图形，避免重复造轮子。
 
@@ -289,7 +289,7 @@ However, there are application materials for award-winning works in the reposito
 4.Q&A
 =====
 
-Q: Why does this project primarily use the turtle module instead of other more advanced graphics libraries?
+Q: Why does this project utilize turtle to render the tkinter.Canvas interface instead of using tkinter directly or other graphics libraries?
 
 A: Initially, I intended to use the tkinter module to write the program, but considering the substantial amount of code required to directly manipulate the Canvas widget for drawing planetary shapes, while the turtle module based on tkinter encapsulates many tkinter functions and can indirectly invoke the Canvas widget for drawing, the turtle module was chosen for rendering to avoid reinventing wheels. Currently, the program's interface is mainly designed using the tkinter module, while the turtle module, which is based on tkinter, is only used for rendering. Additionally, I has rewritten and extended the original turtle module based on their knowledge of tkinter, such as adding image rotation functionality to turtle using the PIL library in `TESTS\\solar\_system\_blackhole2.py`. Furthermore, using the turtle module reduces the amount of code needed for graphic rendering, allowing the main focus to be on designing the physics algorithms and developing other features.
 

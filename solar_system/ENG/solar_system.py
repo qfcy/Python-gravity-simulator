@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Solar System Simulation using turtle module.
+Solar System Simulation using tkinter and turtle module.
 
 Shortcut keys:
 Press Ctrl+"+" or Ctrl+"-" to zoom.

@@ -75,15 +75,12 @@ Source: "引力模拟软件\api-ms-win-crt-time-l1-1-0.dll"; DestDir: "{app}"; Flags: 
 Source: "引力模拟软件\api-ms-win-crt-utility-l1-1-0.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\appdirs.pyc"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\base_library.zip"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\libcrypto-1_1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\libopenblas.VTYUM5MXKVFE4PZZER3L7PNO6YB4XFF3.gfortran-win32.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\libssl-1_1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\MSVCP140.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\pyexpat.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\pyparsing.pyc"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\python37.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\select.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\sqlite3.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\tcl86t.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\tk86t.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\ucrtbase.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -91,18 +88,11 @@ Source: "引力模拟软件\unicodedata.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\VCRUNTIME140.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\_bz2.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\_ctypes.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_curses.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_decimal.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_elementtree.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_hashlib.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\_lzma.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\_multiprocessing.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_queue.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\_socket.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_sqlite3.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_ssl.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "引力模拟软件\_testcapi.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\_tkinter.pyd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "引力模拟软件\turtle.pyc"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\引力模拟 - 卫星变轨.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\引力模拟 - 太阳系.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "引力模拟软件\引力模拟 - 开普勒第一定律.exe"; DestDir: "{app}"; Flags: ignoreversion

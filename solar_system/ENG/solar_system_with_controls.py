@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Solar System Simulation using turtle module with tkinter for control buttons.
+Solar System Simulation using tkinter with control buttons.
 
 Shortcut keys:
 Press Ctrl+"+" or Ctrl+"-" to zoom.
@@ -408,6 +408,7 @@ scr=None
 def main():
     global scr,gs,win
     scr=Screen()
+    scr.title("Python gravity simulator")
     scr.screensize(6000,6000)
     try:
         scr._canvas.master.state("zoomed")

@@ -22,7 +22,7 @@ try:
 except ImportError:
     from Tkinter import TclError
 
-__author__="七分诚意 qq:3076711200"
+__author__="qfcy qq:3076711200"
 __email__="3076711200@qq.com"
 __version__="1.1.1"
 

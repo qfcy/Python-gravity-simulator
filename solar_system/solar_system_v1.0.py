@@ -12,7 +12,7 @@ from time import perf_counter
 from random import randrange
 from turtle import Shape, Turtle, update, Screen, Terminator, Vec2D as Vec, mainloop
 
-__author__="七分诚意 qq:3076711200"
+__author__="qfcy qq:3076711200"
 __email__="3076711200@qq.com"
 __version__="1.0.3"
 

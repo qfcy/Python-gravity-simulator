@@ -11,7 +11,7 @@ Increase the distance from the moon to the earth continuously. The moon will be 
 应用了万有引力等相关的物理公式计算，可以模拟出天体的椭圆轨道，  
 以及验证开普勒三大定律，第一、第二宇宙速度。  
 支持跟踪行星、切换行星，包含简单的发射“飞船”功能。  
-图形部分使用tkinter(turtle)或pygame库。  
+图形部分使用tkinter(部分结合turtle)或pygame库。  
 你能在其中创造一个属于自己的宇宙。  
 此外，这个项目能加以扩展，用来研究其他的物理问题。  
 
@@ -19,9 +19,9 @@ This is a software that simulates the gravity and planetary motion in the univer
 using physical formulas including universal gravitation to calculate the orbits of celestial bodies  
 and verifying Kepler's three laws and the first and second cosmic velocities.  
 It supports tracking, switching planets and launching simple "spaceships",  
-with module tkinter (turtle) or pygame for graphics.  
+with module tkinter (partially combined with turtle) or pygame for graphics.  
 You're able to create a universe belonging to yourself in this program.  
-Additionally, this project can be further expanded to research other physical problems.  
+Additionally, this project can be further extended to research other physical problems.  
 **The English introduction is placed below the Chinese version.**  
 
 项目源代码 (Project source code)：https://github.com/qfcy/python-gravity-simulator  
@@ -86,7 +86,7 @@ dist：使用pyinstaller的打包exe文件，及用Inno Setup制作的安装包�
 不过，仓库里面有获奖作品的申报材料，留给需要做信息技术竞赛的同学做参考。  
 
 ## 四.常见问题
-Q: 为什么本项目使用了turtle库渲染tkinter.Canvas的界面，而不直接使用tkinter，或其他图形库？  
+Q: 为什么本项目结合使用了tkinter和turtle，而不直接使用tkinter，或其他图形库渲染图形？  
 A: 首先，作者本想用tkinter库编写该程序，但考虑到直接调用Canvas控件绘制行星形状的代码量较大，而且基于tkinter的turtle库封装了tkinter，能够间接调用Canvas控件进行绘图，就使用turtle库绘制图形，避免重复造轮子。  
 目前，程序中的界面主要使用tkinter库设计，而基于tkinter的turtle库仅用于渲染。另外，作者基于自己的tkinter知识，重写和扩展了原版turtle模块，如`TESTS\solar_system_blackhole2.py`基于PIL库为turtle添加了图像旋转功能。  
 其次，使用turtle库可减少图形渲染的代码，将主要精力用于物理算法的设计，以及其他功能的开发上。  
@@ -168,7 +168,7 @@ However, there are application materials for award-winning works in the reposito
 
 ## 4.Q&A
 
-Q: Why does this project utilize turtle to render the `tkinter.Canvas` interface instead of using tkinter directly or other graphics libraries?  
+Q: Why does this project combine the use of `tkinter` and `turtle`, rather than using `tkinter` alone or other libraries for rendering?  
 A: Initially, I intended to use the tkinter module to write the program, but considering the substantial amount of code required to directly manipulate the Canvas widget for drawing planetary shapes, while the turtle module based on tkinter encapsulates many tkinter functions and can indirectly invoke the Canvas widget for drawing, the turtle module was chosen for rendering to avoid reinventing wheels.  
 Currently, the program's interface is mainly designed using the tkinter module, while the turtle module, which is based on tkinter, is only used for rendering. Additionally, I has rewritten and extended the original turtle module based on their knowledge of tkinter, such as adding image rotation functionality to turtle using the PIL library in `TESTS\solar_system_blackhole2.py`.  
 Furthermore, using the turtle module reduces the amount of code needed for graphic rendering, allowing the main focus to be on designing the physics algorithms and developing other features.  
